@@ -29,7 +29,7 @@ def start():
     startgame = Toplevel(main)
     startgame.title("Game Start")
     startgame.resizable(False, False)
-    startgame.geometry("250x350")
+    startgame.geometry("250x300")
 
 
     # 전역변수 처리
@@ -54,7 +54,7 @@ def start():
         global count
 
         
-        while True:
+        while len(insert_txt.get()) != 0:
             inputdata = int(insert_txt.get())
             if 101 > inputdata > random_number:
                 count += 1
