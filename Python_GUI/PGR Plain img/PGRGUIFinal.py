@@ -136,6 +136,11 @@ def start():
     # 이미지 통합 작업
     merge_image()
 
+def btn_cls():
+    askAnswer = msgbox.askquestion(title='종료?', message='종료하시겠습니까?')
+    if askAnswer == 'yes':
+        root.destroy()
+
 # 파일 프레임 (파일 추가, 선택 삭제 영역)
 file_frame = Frame(root)
 file_frame.pack(fill="x", padx=5, pady=5) # pad 간격 띄움.
@@ -224,7 +229,7 @@ progress_bar.pack(fill="x", padx=5, pady=5)
 frame_run = Frame(root)
 frame_run.pack(fill="x", padx=5, pady=5)
 
-btn_close = Button(frame_run, padx=5, pady=5, text="닫기", width=12, command=root.quit)
+btn_close = Button(frame_run, padx=5, pady=5, text="닫기", width=12, command=btn_cls)
 btn_close.pack(side="right", padx=3, pady=3)
 
 btn_start = Button(frame_run, padx=5, pady=5, text="시작", width=12, command=start)
